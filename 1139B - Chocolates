@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+#include <string>
+using namespace std;
+
+int main() {
+    long long size;cin>>size;
+    long long arr[size];
+    
+    for(long long  i=0;i<size;i++){
+        cin>>arr[i];
+    }
+    
+    long long sum=arr[size-1];
+    for(long long i=size-2;i>=0;i--){
+       int min_adj=min(arr[i],arr[i+1]-1);  //ya to age wala ekk kam hoga ya jitna kam wo hai utna kam hoga
+       if(min_adj<0) min_adj=0;  //agar negetive me chala jata hai value to usko 0 kar do
+       sum+=min_adj;  
+       arr[i]=min_adj; //set kar min se uss current element ka position
+    }
+    cout<<sum;
+}
+
