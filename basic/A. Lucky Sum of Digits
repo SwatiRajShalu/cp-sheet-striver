@@ -1,0 +1,18 @@
+//-----------------link------------https://codeforces.com/problemset/problem/109/A--------------------------------------
+
+#include <bits/stdc++.h>
+#include <string>
+using namespace std;
+
+int main() {
+    int no;
+    cin>>no;
+    
+    string str="";  //the answer should be in format: no = 4*m + 7*n;
+    while(no>0 && no%7!=0) no-=4 , str+='4';
+    while(no>0 && no%7==0) no-=7 , str+='7';
+    
+    if(no==0) {cout<<str ; return 0;}
+    else cout<<-1;
+}
+
